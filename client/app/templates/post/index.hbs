@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>{{model.title}}<small> - {{model.author.id}}</small></h3>
+    </div>
+    <div class="panel-body">
+        {{model.body}}
+    </div>
+    {{#if isOwn}}
+        <div class="panel-footer">
+            {{link-to 'Редактировать' 'post.edit' model class="btn btn-default"}}
+            {{link-to 'Удалить' 'post.delete' model class="btn btn-default"}}
+        </div>
+    {{/if}}
+</div>
+<h4>Комментарии:</h4>
+{{#if session.isAuthenticated}}
+    {{render 'comments.new'}}
+{{/if}}
+<br>
+{{render 'comments.index' model.comments}}

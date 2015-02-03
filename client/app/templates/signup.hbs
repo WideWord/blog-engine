@@ -1,0 +1,23 @@
+<div class="col-md-offset-3 col-md-6 col-xs-12">
+    <form {{action 'signup' on='submit'}}>
+        <div class="form-group">
+            <label for="username">Логин:</label>
+            {{input value=username type="text" class="form-control" id="username"}}
+            {{#each error in errors.username}}
+                <div class="text-danger" style="margin-top: 10px;">
+                    {{error.message}}
+                </div>
+            {{/each}}
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            {{input value=password type="password" class="form-control" id="password"}}
+            {{#each error in errors.password}}
+                <div class="text-danger" style="margin-top: 10px;">
+                    {{error.message}}
+                </div>
+            {{/each}}
+        </div>
+        <button type="submit" class="btn btn-primary pull-right">Зарегистрироваться</button>
+    </form>
+</div>

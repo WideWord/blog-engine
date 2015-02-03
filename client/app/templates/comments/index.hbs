@@ -1,0 +1,10 @@
+{{#each comment in controller}}
+   <div class="panel panel-default">
+       <div class="panel-heading">
+          {{comment.author.id}}
+       </div>
+       <div class="panel-body">
+          {{comment.body}}
+       </div>
+   </div>
+{{/each}}

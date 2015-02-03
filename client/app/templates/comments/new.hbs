@@ -1,0 +1,11 @@
+<form {{action "create" on="submit"}}>
+    <div class="form-group">
+        {{#each error in errors.body}}
+            <div class="text-danger" style="margin-top: 10px;">
+                {{error.message}}
+            </div>
+        {{/each}}
+        {{textarea value=body class="form-control" id="body" rows=3}}
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
